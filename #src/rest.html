@@ -1,0 +1,56 @@
+@@include('_header.html')
+<div class="promo">
+	<div class="promo__bg">
+		<div class="container">
+			<div class="promo__name">
+				<div class="promo__title">Трактир «Пушкин»</div>
+				<div class="promo__body">
+					<div class="promo__subtitle">₽₽₽ • Европейская</div>
+					<div class="promo__label">40 - 50 мин</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<nav class="menu">
+	<div class="container">
+		<a href="#" class="menu__link">Закуски</a>
+		<a href="#" class="menu__link">Салаты</a>
+		<a href="#" class="menu__link">Супы</a>
+		<a href="#" class="menu__link">Горячие блюда</a>
+		<a href="#" class="menu__link">Гарниры</a>
+		<a href="#" class="menu__link">Десерты</a>
+	</div>
+</nav>
+<main class="content">
+	<div class="container">
+		<div class="content__title">Закуски</div>
+		<div class="lds-roller" v-if='v-cloak'>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div class="content__row">
+			<div class="content__col" v-for='(item, i) in rest.subtitle' key="rest.subtitle[i]">
+				<div class="content__item">
+					<div class="content__body">
+						<div class="content__info">
+							<div class="content__subtitle">{{rest.subtitle[i]}}</div>
+							<div class="content__label">{{rest.label[i]}}</div>
+						</div>
+						<div class="content__price">{{rest.price[i]}}</div>
+					</div>
+					<div class="content__img ">
+						<img :src="rest.img[i]" :alt="rest.subtitle[i]">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+@@include('_footer.html')

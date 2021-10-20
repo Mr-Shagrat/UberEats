@@ -1,0 +1,203 @@
+.footer {
+	background-color: #262626;
+	padding: 56px 0 40px 0;
+
+	&__logo {
+		& img {
+			max-width: 100%;
+		}
+	}
+}
+
+.footer-info {
+	&__row {
+		display: flex;
+		@media (max-width: 526px) {
+			flex-direction: column;
+		}
+	}
+
+	&__item {
+		flex: 0 1 33.333%;
+		@media (max-width: 710px) {
+			flex: 1 1 auto;
+		}
+	}
+
+	&__links {
+		width: 92px;
+		@media (max-width: 554px) {
+			margin: 0 0 39px 0;
+		}
+	}
+	&__soc {
+		display: flex;
+		justify-content: space-between;
+		& a {
+			display: inline-block;
+			& img {
+				max-width: 100%;
+			}
+		}
+	}
+	&__body {
+		margin: 0 0 33px 0;
+	}
+
+	&__lang {
+		width: 227px;
+		height: 40px;
+		background: url("../img/Icons/language.png") 16px 50% no-repeat, #3b3b3b;
+		border-radius: 2px;
+		font-size: 13px;
+		line-height: 40px;
+		color: #ffffff;
+		padding: 0 0 0 48px;
+	}
+
+	&__hash {
+		font-size: 16px;
+		line-height: 19px;
+		color: #ffffff;
+		margin: 0 0 20px 0;
+		& span {
+			font-size: 16px;
+			line-height: 19px;
+			color: #49a144;
+		}
+	}
+
+	&__menu {
+		font-size: 13px;
+		line-height: 15px;
+		color: #ffffff;
+		& li {
+			margin: 0 0 23px 0;
+			&:last-child {
+				margin: 0;
+			}
+			& a:visited {
+				color: #ffffff;
+			}
+		}
+	}
+}
+
+.footer-apps {
+	&__body {
+		display: flex;
+		justify-content: center;
+		margin: 0 -20px;
+		@media (max-width: 320px) {
+			margin: 0 -12px;
+		}
+	}
+
+	&__item {
+		padding: 0 20px;
+		&:last-child {
+			margin: 0;
+		}
+		& img {
+			max-width: 100%;
+		}
+		@media (max-width: 320px) {
+			padding: 0 12px;
+		}
+	}
+}
+
+.footer__link {
+	font-size: 11px;
+	line-height: 13px;
+	color: #ffffff;
+	&:visited {
+		color: #ffffff;
+	}
+}
+
+.footer-about {
+	&__body {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	&__item {
+		& a {
+			color: #fff;
+		}
+		flex: 0 1 33.333%;
+		@media (max-width: 768px) {
+			flex: 0 1 100%;
+			margin: 0 0 24px 0;
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+}
+.footer-up {
+	position: relative;
+	&__link {
+		display: inline-block;
+		width: 80px;
+		height: 80px;
+		border-radius: 2px;
+		background: #59bd5a;
+		position: fixed;
+		bottom: 55px;
+		right: 10px;
+		opacity: 0;
+		transform: scale(0);
+		transition: all 0.3s ease 0s;
+		text-align: center;
+		font-size: 40px;
+		color: #fff;
+		line-height: 75px;
+		@media (max-width: 768px) {
+			bottom: 40px;
+		}
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 27.5px;
+			left: 32px;
+			background: url("../img/Icons/arrow.png") 50% no-repeat;
+			width: 16px;
+			height: 25px;
+			@media (max-width: 320px) {
+				top: 19.5px;
+				left: 24px;
+			}
+		}
+		&.active {
+			transform: scale(1);
+			opacity: 0.8;
+		}
+		@media (max-width: 320px) {
+			width: 64px;
+			height: 64px;
+		}
+	}
+}
+
+.footer__block {
+	&::after {
+		display: inline-block;
+		content: "";
+		position: relative;
+		width: 100%;
+		height: 1px;
+		left: 0;
+		top: 0;
+		background: #ffffff;
+		opacity: 0.4;
+		margin: 40px 0;
+	}
+	&:last-child::after {
+		content: "";
+		display: none;
+	}
+}

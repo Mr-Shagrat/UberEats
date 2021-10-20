@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.min.css">
+	<title>Uber Eats</title>
+	<style>
+		[v-cloak] {
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper" id="app">
+		<header class="header">
+			<div class="container">
+				<div class="header__row">
+					<div class="header__logo">
+						<a href="index.html" class="header__link"><img src="img/Icons/logo.png" alt="logo" /></a>
+					</div>
+					<div class="header__body">
+						<a href="#" class="header__join">Войти</a>
+						<a href="#" class="header__basket"><img src="img/Icons/basket.png" alt="basket" /></a>
+					</div>
+				</div>
+			</div>
+		</header>
+<div class="search">
+	<div class="container">
+		<nav class="search__input">
+			<input type="text" placeholder="Поиск по ресторанам и кухням">
+		</nav>
+	</div>
+</div>
+<main class="eats">
+	<section class="place">
+		<div class="container">
+			<div class="place__title">Рестораны в Москвe</div>
+			<div class="lds-roller" v-if='v-cloak'>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div class="place__row">
+				<div class="place__item" v-for="(item,i) in eats.title" :key="item[i]" v-cloak>
+					<a href="rest.html" alt="rest">
+						<div class="place__img"><img v-bind:src="eats.img[i]" v-bind:alt="eats.title[i]"></div>
+						<div class="place__body">
+							<div class="place__subtitle">{{ eats.title[i]}}</div>
+							<div class="place__label">{{ eats.subtitle[i]}}</div>
+							<div class="place__text">{{ eats.price[i]}}</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+<footer class="footer">
+	<div class="container">
+		<div class="footer__logo footer__block">
+			<a href="#" class="logo">
+				<img src="img/Icons/Bottom_logo.png" alt="logo">
+			</a>
+		</div>
+		<div class="footer-info footer__block">
+			<div class="footer-info__row">
+				<div class="footer-info__item">
+					<div class="footer-info__body">
+						<select name="Lang" class="footer-info__lang">
+							<option value="ru">Русский</option>
+							<option value="en">English</option>
+						</select>
+					</div>
+					<div class="footer-info__links">
+						<div class="footer-info__hash">
+							<p><span>#</span>UberEats</p>
+						</div>
+						<div class="footer-info__soc">
+							<a href="#"><img src="img/Icons/facebook.png" alt="facebook" /></a>
+							<a href='#'><img src="img/Icons/twitter.png" alt="twitter" /></a>
+							<a href='#'><img src="img/Icons/instagram.png" alt="instagram" /></a>
+						</div>
+					</div>
+				</div>
+				<div class="footer-info__item">
+					<ul class="footer-info__menu">
+						<li><a href="">Об UberEats</a></li>
+						<li><a href="">Станьте партнёром по доставке</a></li>
+						<li><a href="">Станьте парнёром-рестораном</a></li>
+					</ul>
+				</div>
+				<div class="footer-info__item">
+					<ul class="footer-info__menu">
+						<li><a href="">Все города</a></li>
+						<li><a href="">Цены</a></li>
+						<li><a href="">Помощь</a></li>
+						<li><a href="">FAQs</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-apps footer__block">
+			<div class="footer-apps__body">
+				<div class="footer-apps__item">
+					<a href="#">
+						<img src="img/Icons/iOS.png" alt="AppStore">
+					</a>
+				</div>
+				<div class="footer-apps__item">
+					<a href="#">
+						<img src="img/Icons/Android.png" alt="GooglePlay">
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="footer-about footer__block">
+			<div class="footer-about__body">
+				<div class="footer-about__item">
+					<a href="#" class="">© 2017 Uber Technologies Inc.</a>
+				</div>
+				<div class="footer-about__item">
+					<a href="#" class="">Обработка персональных данных</a>
+				</div>
+				<div class="footer-about__item">
+					<a href="#" class="">Пользовательское соглашение</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-up">
+		<a href="#" class="footer-up__link" @click.prevent='upClick'></a>
+	</div>
+</footer>
+</div>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="js/script.min.js"></script>
+</body>
+
+</html>
